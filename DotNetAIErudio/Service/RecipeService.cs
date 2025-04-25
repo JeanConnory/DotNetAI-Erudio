@@ -11,7 +11,8 @@ public class RecipeService
     public RecipeService(OpenAIClient openAIClient, IConfiguration configuration)
     {
         _openAIClient = openAIClient;
-        _model = configuration["OpenAi:ChatModel"] ?? "gpt-4o";
+        //_model = configuration["OpenAi:ChatModel"] ?? "gpt-4o";
+        _model = configuration["OpenAi:ChatModel"] ?? "deepseek-chat";
     }
 
     public async Task<string> GenerateRecipe(string ingredients, string cuisine, string dietaryRestrictions)

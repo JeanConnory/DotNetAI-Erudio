@@ -11,7 +11,8 @@ public class ImageService
     public ImageService(OpenAIClient openAIClient, IConfiguration configuration)
     {
         _openAIClient = openAIClient;
-        _model = configuration["OpenAi:ImageModel"] ?? "dall-e-3";
+        //_model = configuration["OpenAi:ImageModel"] ?? "dall-e-3";
+        _model = configuration["OpenAi:ImageModel"] ?? "janus-pro";
     }
 
     public async Task<IEnumerable<string>> GenerateImage(string prompt, string quality = "hd", int n = 1, int height = 1024, int width = 1024)
